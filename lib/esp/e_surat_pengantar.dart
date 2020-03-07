@@ -19,7 +19,7 @@ class _E_Surat_PengantarState extends State<E_Surat_Pengantar> {
       return new Scaffold(
 
         appBar: new AppBar(
-          title: new Text("Add Pengurus"),
+          title: new Text("Buat Surat Pengantar"),
           backgroundColor: Colors.transparent,
         ),
         body: ListView(

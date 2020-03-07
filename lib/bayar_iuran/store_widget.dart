@@ -37,27 +37,29 @@ class StoreWidget extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 10,
+            height: 2,
           ),
           Container(
-            height: 150,
-            margin: EdgeInsets.only(bottom: 20),
+            height: 120,
+            width: 500,
+            margin: EdgeInsets.only(bottom: 2, top: 2),
             child: ListView(
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
               children: <Widget>[
                 Container(
-                  height: 140,
+                  height: 100,
                   width: MediaQuery.of(context).size.width - 120,
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius: BorderRadius.circular(2),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Container(
-                        height: 110,
+                        height: 80,
+                        width: 250,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.only(
@@ -65,8 +67,7 @@ class StoreWidget extends StatelessWidget {
                               topRight: Radius.circular(8)),
                           image: DecorationImage(
                               image: AssetImage(
-                                  'assets/van.jpg'),
-                              fit: BoxFit.fill),
+                                  'assets/van.jpg'),fit: BoxFit.fill),
                         ),
                       ),
                       Padding(
@@ -74,7 +75,7 @@ class StoreWidget extends StatelessWidget {
                         child: Material(
                           color: Colors.transparent,
                           child: Text(
-                            "Vanessa Takut Corona",
+                            "Vanessa ",
                             style: TextStyle(
                               color: Color(0xffC7C8CC),
                               fontSize: 16,
@@ -90,7 +91,8 @@ class StoreWidget extends StatelessWidget {
                   width: 20,
                 ),
                 Container(
-                  height: 150,
+                  height: 100,
+                  width: MediaQuery.of(context).size.width - 120,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(8),
@@ -99,18 +101,16 @@ class StoreWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Container(
-                        height: 110,
-                        width: MediaQuery.of(context).size.width - 120,
+                        height: 80,
+                        width: 250,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(8),
-                            topRight: Radius.circular(8),
-                          ),
+                              topLeft: Radius.circular(8),
+                              topRight: Radius.circular(8)),
                           image: DecorationImage(
-                              image: NetworkImage(
-                                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO9QdQB-cozkrh3o7iDXFR7X4eC5P3YGiygl3Jeo6g4CuH7udE'),
-                              fit: BoxFit.fill),
+                              image: AssetImage(
+                                  'assets/van.jpg'),fit: BoxFit.fill),
                         ),
                       ),
                       Padding(
@@ -118,7 +118,7 @@ class StoreWidget extends StatelessWidget {
                         child: Material(
                           color: Colors.transparent,
                           child: Text(
-                            "McDonald's",
+                            "Vanessa ",
                             style: TextStyle(
                               color: Color(0xffC7C8CC),
                               fontSize: 16,
@@ -129,7 +129,7 @@ class StoreWidget extends StatelessWidget {
                       )
                     ],
                   ),
-                )
+                ),
               ],
             ),
           )

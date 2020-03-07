@@ -73,6 +73,7 @@ flutter:
     - assets/smart.png
     - assets/ssmart.png
     - assets/van.jpg
+    - assets/error.png
 
     - assets/iuran/dana.png
     - assets/iuran/gopay.png
@@ -84,6 +85,14 @@ flutter:
     - assets/iuran/biuran.png
     - assets/iuran/his.png
     - assets/iuran/bayar_iuranall.png
+
+    - assets/koperasi/ac.png
+    - assets/koperasi/bersih.png
+    - assets/koperasi/catering.png
+    - assets/koperasi/hidroponik.png
+    - assets/koperasi/londry.png
+    - assets/koperasi/mobil.png
+    - assets/koperasi/sembako.png
 
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg

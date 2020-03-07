@@ -2,26 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:warga2/Beranda_Inbox.dart';
 import 'package:warga2/absensi_security/destination_view.dart';
 import 'package:warga2/bayar_iuran/home_iuran.dart';
-import 'package:warga2/bayar_iuran/home_screen.dart';
 import 'package:warga2/bayar_iuran/store_widget.dart';
-import 'package:warga2/beranda/beranda_appbar.dart';
 import 'package:warga2/constant.dart';
 import 'package:warga2/esp/e_surat_pengantar.dart';
 import 'package:warga2/pemutakhir_data/pemutakhir_page.dart';
 import 'package:warga2/pengurus/list_anggota_pengurus.dart';
 
-class BerandaPage extends StatefulWidget {
+class Home_Koperasi extends StatefulWidget {
   @override
-  _BerandaPageState createState() => new _BerandaPageState();
+  _Home_KoperasiState createState() => new _Home_KoperasiState();
 }
 
-class _BerandaPageState extends State<BerandaPage> {
+class _Home_KoperasiState extends State<Home_Koperasi> {
 
   @override
   Widget build(BuildContext context) {
     return new SafeArea(
       child: new Scaffold(
-       /* appBar: new GojekAppBar(),*/
+        /* appBar: new GojekAppBar(),*/
         backgroundColor: GojekPalette.grey,
         body: new Container(
           child: new ListView(
@@ -32,18 +30,15 @@ class _BerandaPageState extends State<BerandaPage> {
                   color: Colors.grey[200],
                   child: new Column(
                     children: <Widget>[
-                        _buildGopayMenu(),
+                      _buildGopayMenu(),
                     ],
                   )),
-              Padding(
-                padding: const EdgeInsets.only(top: 20),
-                child: StoreWidget(),
-              ),
+
               Padding(
                 padding: EdgeInsets.only(top: 10.0, right: 20.0, left: 20.0),
                 child: Container(
                   width: double.infinity,
-                  height: 325.0,
+                  height: 250.0,
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.all(Radius.circular(20.0)),
@@ -70,38 +65,19 @@ class _BerandaPageState extends State<BerandaPage> {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) => Anggota_Pengurus(),
+                                            builder: (context) => Home_Beranda_Indbox(),
                                           ),
                                         );
                                       },
                                       child: Container(
                                         child: ClipRRect(
 
-                                          child: Image.asset('assets/daftar_pengurus.png',
+                                          child: Image.asset('assets/koperasi/ac.png',
                                               width: 80.0, height: 80.0),
                                         ),),
                                     )
                                 ),
                                 SizedBox(height: 20.0),
-                                Material(
-                                    child: InkWell(
-                                      onTap: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => E_Surat_Pengantar(),
-                                          ),
-                                        );
-                                      },
-                                      child: Container(
-                                        child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(10.0),
-                                          child: Image.asset('assets/e-surat_pengantar.png',
-                                              width: 80.0, height: 80.0),
-                                        ),),
-                                    )
-                                ),
-                                SizedBox(height: 15.0),
                                 Material(
                                     child: InkWell(
                                       onTap: () {
@@ -115,11 +91,12 @@ class _BerandaPageState extends State<BerandaPage> {
                                       child: Container(
                                         child: ClipRRect(
                                           borderRadius: BorderRadius.circular(10.0),
-                                          child: Image.asset('assets/saran.png',
+                                          child: Image.asset('assets/koperasi/bersih.png',
                                               width: 80.0, height: 80.0),
                                         ),),
                                     )
-                                )
+                                ),
+
                               ],
 
                             ),
@@ -132,14 +109,14 @@ class _BerandaPageState extends State<BerandaPage> {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) => Home_Iuran(),
+                                            builder: (context) => Home_Beranda_Indbox(),
                                           ),
                                         );
                                       },
                                       child: Container(
                                         child: ClipRRect(
                                           borderRadius: BorderRadius.circular(10.0),
-                                          child: Image.asset('assets/iuran/bayar_iuranall.png',
+                                          child: Image.asset('assets/koperasi/hidroponik.png',
                                               width: 80.0, height: 80.0),
                                         ),),
                                     )
@@ -158,30 +135,12 @@ class _BerandaPageState extends State<BerandaPage> {
                                       child: Container(
                                         child: ClipRRect(
                                           borderRadius: BorderRadius.circular(10.0),
-                                          child: Image.asset('assets/tiket_kelurahan.png',
+                                          child: Image.asset('assets/koperasi/londry.png',
                                               width: 80.0, height: 80.0),
                                         ),),
                                     )
                                 ),
-                                SizedBox(height: 15.0),
-                                Material(
-                                    child: InkWell(
-                                      onTap: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => Home_Beranda_Indbox(),
-                                          ),
-                                        );
-                                      },
-                                      child: Container(
-                                        child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(10.0),
-                                          child: Image.asset('assets/pengaduan.png',
-                                              width: 80.0, height: 80.0),
-                                        ),),
-                                    )
-                                )
+
                               ],
                             ),
                             Column(
@@ -193,25 +152,6 @@ class _BerandaPageState extends State<BerandaPage> {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) => Pemutakhir(),
-                                          ),
-                                        );
-                                      },
-                                      child: Container(
-                                        child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(10.0),
-                                          child: Image.asset('assets/pemutakhiran_data.png',
-                                              width: 80.0, height: 80.0),
-                                        ),),
-                                    )
-                                ),
-                                SizedBox(height: 20.0),
-                                Material(
-                                    child: InkWell(
-                                      onTap: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
                                             builder: (context) => Home_Beranda_Indbox(),
                                           ),
                                         );
@@ -219,7 +159,7 @@ class _BerandaPageState extends State<BerandaPage> {
                                       child: Container(
                                         child: ClipRRect(
                                           borderRadius: BorderRadius.circular(10.0),
-                                          child: Image.asset('assets/absensi_security.png',
+                                          child: Image.asset('assets/koperasi/sembako.png',
                                               width: 80.0, height: 80.0),
                                         ),),
                                     )
@@ -237,8 +177,8 @@ class _BerandaPageState extends State<BerandaPage> {
                                       },
                                       child: Container(
                                         child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(1.0),
-                                          child: Image.asset('assets/pendaftaran.png',
+                                          borderRadius: BorderRadius.circular(10.0),
+                                          child: Image.asset('assets/koperasi/mobil.png',
                                               width: 80.0, height: 80.0),
                                         ),),
                                     )

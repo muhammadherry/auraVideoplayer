@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:warga2/Beranda_Inbox.dart';
+import 'package:warga2/Beranda_Kooperasi/Home_Koperasi.dart';
+import 'package:warga2/bayar_iuran/home_screen.dart';
 import 'package:warga2/beranda/beranda_view.dart';
 import 'package:warga2/constant.dart';
 
@@ -9,8 +12,11 @@ class LandingPage extends StatefulWidget {
 
 class _LandingPageState extends State<LandingPage> {
   int _bottomNavCurrentIndex = 0;
-  List<Widget> _container = [
+  final List<Widget> _container = [
     new BerandaPage(),
+    new Home_Koperasi(),
+    new Home_Beranda_Indbox(),
+    new HomeScreen(),
   ];
 
   @override
@@ -46,14 +52,14 @@ class _LandingPageState extends State<LandingPage> {
         ),
         BottomNavigationBarItem(
           activeIcon: new Icon(
-            Icons.assignment,
+            Icons.monetization_on,
             color: GojekPalette.green,
           ),
           icon: new Icon(
-            Icons.assignment,
+            Icons.monetization_on,
             color: Colors.grey,
           ),
-          title: new Text('Pesanan'),
+          title: new Text('Koperasi'),
         ),
         BottomNavigationBarItem(
           activeIcon: new Icon(
@@ -70,8 +76,8 @@ class _LandingPageState extends State<LandingPage> {
           activeIcon: new Icon(
             Icons.person,
             color: GojekPalette.green,
-
           ),
+
           icon: new Icon(
             Icons.person,
             color: Colors.grey,
