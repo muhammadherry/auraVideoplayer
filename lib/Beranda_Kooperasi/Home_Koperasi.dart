@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:warga2/Beranda_Inbox.dart';
-import 'package:warga2/absensi_security/destination_view.dart';
-import 'package:warga2/bayar_iuran/home_iuran.dart';
-import 'package:warga2/bayar_iuran/store_widget.dart';
 import 'package:warga2/constant.dart';
-import 'package:warga2/esp/e_surat_pengantar.dart';
-import 'package:warga2/pemutakhir_data/pemutakhir_page.dart';
-import 'package:warga2/pengurus/list_anggota_pengurus.dart';
 
 class Home_Koperasi extends StatefulWidget {
   @override
@@ -35,13 +29,13 @@ class _Home_KoperasiState extends State<Home_Koperasi> {
                   )),
 
               Padding(
-                padding: EdgeInsets.only(top: 10.0, right: 20.0, left: 20.0),
+                padding: EdgeInsets.only(top: 100.0, right: 20.0, left: 20.0),
                 child: Container(
                   width: double.infinity,
                   height: 250.0,
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
                       boxShadow: [
                         BoxShadow(
                             color: Colors.black.withOpacity(0.1),

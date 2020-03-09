@@ -17,7 +17,7 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
-
+  image_picker:
   flutter:
     sdk: flutter
 
@@ -25,6 +25,12 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   community_material_icon: ^3.5.95
+  intl:
+  datetime_picker_formfield: ^0.1.8
+  http:
+ # image_picker: 0.4.12+1
+#  mime: ^0.9.6+3
+# toast: ^0.1.5
 
 dev_dependencies:
   flutter_test:
@@ -74,6 +80,10 @@ flutter:
     - assets/ssmart.png
     - assets/van.jpg
     - assets/error.png
+    - assets/icopeng.png
+    - assets/rupiah.png
+    - assets/histori.png
+    - assets/tikket.png
 
     - assets/iuran/dana.png
     - assets/iuran/gopay.png
@@ -94,6 +104,12 @@ flutter:
     - assets/koperasi/mobil.png
     - assets/koperasi/sembako.png
 
+    - assets/security/bantuan.png
+    - assets/security/guest_list.png
+    - assets/security/history.png
+    - assets/security/tamu.png
+
+
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
 
@@ -108,14 +124,15 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  fonts:
-    - family: Pacifico
-      fonts:
-        - asset: assets/fonts/Pacifico-Regular.ttf
-        - asset: assets/fonts/OpenSans.ttf
-    - family: Ubuntu
-      fonts:
-        - asset: assets/fonts/Ubuntu-Regular.ttf
+
+  #fonts:
+   # - family: Pacifico
+     # fonts:
+    #    - asset: assets/fonts/Pacifico-Regular.ttf
+   #     - asset: assets/fonts/OpenSans.ttf
+  #  - family: Ubuntu
+ #     fonts:
+#        - asset: assets/fonts/Ubuntu-Regular.ttf
 
   #   - family: Schyler
   #     fonts:

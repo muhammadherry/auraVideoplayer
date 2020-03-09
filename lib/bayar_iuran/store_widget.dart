@@ -40,7 +40,7 @@ class StoreWidget extends StatelessWidget {
             height: 2,
           ),
           Container(
-            height: 120,
+            height: 115,
             width: 500,
             margin: EdgeInsets.only(bottom: 2, top: 2),
             child: ListView(
@@ -49,17 +49,17 @@ class StoreWidget extends StatelessWidget {
               children: <Widget>[
                 Container(
                   height: 100,
-                  width: MediaQuery.of(context).size.width - 120,
+                  width: MediaQuery.of(context).size.width - 180,
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(2),
+                    borderRadius: BorderRadius.circular(8),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Container(
-                        height: 80,
-                        width: 250,
+                        height: 90,
+                        width: 210,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.only(
@@ -71,7 +71,7 @@ class StoreWidget extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(2.0),
                         child: Material(
                           color: Colors.transparent,
                           child: Text(
@@ -92,7 +92,7 @@ class StoreWidget extends StatelessWidget {
                 ),
                 Container(
                   height: 100,
-                  width: MediaQuery.of(context).size.width - 120,
+                  width: MediaQuery.of(context).size.width - 180,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(8),
@@ -101,8 +101,8 @@ class StoreWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Container(
-                        height: 80,
-                        width: 250,
+                        height: 90,
+                        width: 210,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.only(
@@ -114,7 +114,7 @@ class StoreWidget extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(2.0),
                         child: Material(
                           color: Colors.transparent,
                           child: Text(

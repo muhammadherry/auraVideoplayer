@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:warga2/Beranda_Inbox.dart';
 import 'package:warga2/absensi_security/destination_view.dart';
 import 'package:warga2/bayar_iuran/home_iuran.dart';
-import 'package:warga2/bayar_iuran/home_screen.dart';
 import 'package:warga2/bayar_iuran/store_widget.dart';
-import 'package:warga2/beranda/beranda_appbar.dart';
+import 'package:warga2/beranda_pengaduan/home_pengaduan.dart';
 import 'package:warga2/constant.dart';
 import 'package:warga2/esp/e_surat_pengantar.dart';
 import 'package:warga2/pemutakhir_data/pemutakhir_page.dart';
 import 'package:warga2/pengurus/list_anggota_pengurus.dart';
+import 'package:warga2/saran/uploadimage.dart';
 
 class BerandaPage extends StatefulWidget {
   @override
@@ -36,7 +36,7 @@ class _BerandaPageState extends State<BerandaPage> {
                     ],
                   )),
               Padding(
-                padding: const EdgeInsets.only(top: 20),
+                padding: const EdgeInsets.only(top: 10),
                 child: StoreWidget(),
               ),
               Padding(
@@ -46,7 +46,7 @@ class _BerandaPageState extends State<BerandaPage> {
                   height: 325.0,
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
                       boxShadow: [
                         BoxShadow(
                             color: Colors.black.withOpacity(0.1),
@@ -108,7 +108,7 @@ class _BerandaPageState extends State<BerandaPage> {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) => Home_Beranda_Indbox(),
+                                            builder: (context) => Upload_Image(),
                                           ),
                                         );
                                       },
@@ -170,7 +170,7 @@ class _BerandaPageState extends State<BerandaPage> {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) => Home_Beranda_Indbox(),
+                                            builder: (context) => Pengaduan_Page(),
                                           ),
                                         );
                                       },
@@ -212,7 +212,7 @@ class _BerandaPageState extends State<BerandaPage> {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) => Home_Beranda_Indbox(),
+                                            builder: (context) => Destination_Security(),
                                           ),
                                         );
                                       },
@@ -312,16 +312,27 @@ class _BerandaPageState extends State<BerandaPage> {
                   new Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      new Image.asset(
-                        "assets/icon_transfer.png",
-                        width: 25.0,
-                        height: 25.0,
+                      InkWell(
+                        onTap: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Home_Iuran(),
+                            ),
+                          );
+                        },
+                        child: Image.asset(
+                          "assets/rupiah.png",
+                          width: 25.0,
+                          height: 25.0,
+                        ),
                       ),
+
                       new Padding(
                         padding: EdgeInsets.only(top: 5.0),
                       ),
                       new Text(
-                        "Transfer",
+                        "Iuran",
                         style: TextStyle(color: Colors.white, fontSize: 10.0),
                       )
                     ],
@@ -330,7 +341,7 @@ class _BerandaPageState extends State<BerandaPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       new Image.asset(
-                        "assets/icon_scan.png",
+                        "assets/histori.png",
                         width: 25.0,
                         height: 25.0,
                       ),
@@ -338,7 +349,7 @@ class _BerandaPageState extends State<BerandaPage> {
                         padding: EdgeInsets.only(top: 5.0),
                       ),
                       new Text(
-                        "Scan QR",
+                        "History",
                         style: TextStyle(color: Colors.white, fontSize: 10.0),
                       )
                     ],
@@ -347,7 +358,7 @@ class _BerandaPageState extends State<BerandaPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       new Image.asset(
-                        "assets/icon_saldo.png",
+                        "assets/tikket.png",
                         width: 25.0,
                         height: 25.0,
                       ),
@@ -355,7 +366,7 @@ class _BerandaPageState extends State<BerandaPage> {
                         padding: EdgeInsets.only(top: 5.0),
                       ),
                       new Text(
-                        "Isi Saldo",
+                        "Tiket",
                         style: TextStyle(color: Colors.white, fontSize: 10.0),
                       )
                     ],
@@ -363,18 +374,30 @@ class _BerandaPageState extends State<BerandaPage> {
                   new Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      new Image.asset(
-                        "assets/icon_menu.png",
-                        width: 25.0,
-                        height: 25.0,
+                      InkWell(
+                        onTap: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Home_Beranda_Indbox(),
+                            ),
+                          );
+                        },
+                        child: Image.asset(
+                          "assets/icopeng.png",
+                          width: 25.0,
+                          height: 25.0,
+                        ),
                       ),
+
                       new Padding(
                         padding: EdgeInsets.only(top: 5.0),
                       ),
                       new Text(
-                        "Lainnya",
+                        "Pengaduan",
                         style: TextStyle(color: Colors.white, fontSize: 10.0),
                       )
+
                     ],
                   ),
                 ],
