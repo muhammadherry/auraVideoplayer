@@ -1,81 +1,84 @@
+/*
+import 'dart:async';
 import 'dart:io';
-import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+*/
+/*
+
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      title: 'Image picker',
+      home: Upload_Image(title:'image picker'),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+*//*
+
+
 
 class Upload_Image extends StatefulWidget{
+  Upload_Image({Key key, this.title}): super(key:key);
+
+  final String title;
+
   @override
   _Upload_ImageState createState()=>_Upload_ImageState();
 }
 
 class _Upload_ImageState extends State<Upload_Image>{
-  File imageFile;
-  _openGallery(BuildContext context) async{
-    var picture = await ImagePicker.pickImage(source: ImageSource.gallery);
-    this.setState((){
-      imageFile = picture;
-    });
-    Navigator.of(context).pop();
-  }
+File _image;
 
-  _openCamera(BuildContext context)async{
-    var picture = await ImagePicker.pickImage(source: ImageSource.camera);
-    this.setState((){
-      imageFile = picture;
-    });
-    Navigator.of(context).pop();
-  }
-  Future<void> _showChiceDialog(BuildContext context){
-   return showDialog(context: context,builder: (BuildContext context){
-     return AlertDialog(
-       title: Text("Make a choice"),
-       content: SingleChildScrollView(
-         child: ListBody(
-           children: <Widget>[
-             GestureDetector(
-               child: Text("gaeri"),
-               onTap: (){
-                 _openGallery(context);
-               },
-             ),
-             GestureDetector(
-               child: Text("camera"),
-               onTap: (){
-                 _openCamera(context);
-               },
-             )
-           ],
-         ),
-       ),
-     );
-   });
-  }
-Widget _decideImageView(){
-    if(imageFile == null){
-      return Text("no image");
-    }
-    else{
-      Image.file(imageFile,width: 400,height: 400);
-    }
+Future getImageFromCam() async{
+  var image = await ImagePicker.pickImage(source: ImageSource.camera);
+  setState((){
+    _image = image;
+  });
+}
+Future getImageFromGallery() async{
+  var image = await ImagePicker.pickImage(source: ImageSource.gallery);
+  setState(() {
+    _image = image;
+  });
 }
   @override
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: Text("Main"),
+        title: Text('image'),
       ),
-      body: Container(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              _decideImageView(),
-              RaisedButton(onPressed: (){
-                _showChiceDialog(context);
-              },child: Text("selectimage"),)
-            ],
+      body: ListView(
+        children: <Widget>[
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: 200.0,
+            child: Center(
+              child: _image == null
+              ? Text('no image selected')
+              : Image.file(_image),
+            ),
           ),
-        ),
+Row(
+  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  children: <Widget>[
+    FloatingActionButton(
+      onPressed: getImageFromCam,
+      tooltip: 'pick image',
+      child: Icon(Icons.add_a_photo),
+    ),
+    FloatingActionButton(
+      onPressed: getImageFromCam,
+      tooltip: 'pick image',
+      child: Icon(Icons.wallpaper),
+    ),
+  ],
+)
+        ],
       ),
+
     );
   }
-}
+}*/

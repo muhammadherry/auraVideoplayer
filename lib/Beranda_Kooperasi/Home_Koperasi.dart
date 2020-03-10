@@ -8,7 +8,6 @@ class Home_Koperasi extends StatefulWidget {
 }
 
 class _Home_KoperasiState extends State<Home_Koperasi> {
-
   @override
   Widget build(BuildContext context) {
     return new SafeArea(

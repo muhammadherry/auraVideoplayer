@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:warga2/landingpage_view.dart';
 
-class Pengaduan_Page extends StatefulWidget{
+class Pendaftaran_Page extends StatefulWidget{
   @override
-  _Pengaduan_PageState createState() => new _Pengaduan_PageState();
+  _Pendaftaran_PageState createState() => new _Pendaftaran_PageState();
 }
 
-class _Pengaduan_PageState extends State<Pengaduan_Page>{
+class _Pendaftaran_PageState extends State<Pendaftaran_Page>{
   final formats = {
     InputType.both: DateFormat("EEEE, MMMM d, yyyy 'at' h:mma"),
     InputType.date: DateFormat('yyyy-MM-dd'),
@@ -20,8 +20,8 @@ class _Pengaduan_PageState extends State<Pengaduan_Page>{
   DateTime date;
 
 
-  List<String> agama=["Suka","Tidak Suka"];
-  String _agama="Suka";
+  List<String> agama=["Islam","Kristen","Budha","Hindu","Konghuchu"];
+  String _agama="Islam";
 
   void pilihAgama(String value){
     setState((){
@@ -51,10 +51,9 @@ class _Pengaduan_PageState extends State<Pengaduan_Page>{
               child: new Column(
                 children: <Widget>[
                   new TextField(
-                    maxLines:3,
                     decoration: new InputDecoration(
-                        hintText: "No-Keterangan Aduan",
-                        labelText: "No-Keterangan Aduan",
+                        hintText: "No-KTP",
+                        labelText: "No-KTP",
                         border: new OutlineInputBorder(
                             borderRadius: new BorderRadius.circular(20.0)
                         )
@@ -62,20 +61,43 @@ class _Pengaduan_PageState extends State<Pengaduan_Page>{
                   ),
                   new Padding(padding: new EdgeInsets.only(top: 20.0),),
                   new TextField(
-                    maxLines: 3,
                     decoration: new InputDecoration(
-                        hintText: "Foto",
-                        labelText: "Foto",
+                        hintText: "Nama Lengkap",
+                        labelText: "Nama Lengkap",
                         border: new OutlineInputBorder(
                             borderRadius: new BorderRadius.circular(20.0)
                         )
                     ),
                   ),
-
+                  new Padding(padding: new EdgeInsets.only(top: 20.0),),
+                  new TextField(
+                    decoration: new InputDecoration(
+                        hintText: "Tempat Lahir",
+                        labelText: "Tempat Lahir",
+                        border: new OutlineInputBorder(
+                            borderRadius: new BorderRadius.circular(20.0)
+                        )
+                    ),
+                  ),
+                  new Padding(padding: new EdgeInsets.only(top: 20.0),),
+                  new DateTimePickerFormField(
+                    inputType: inputType,
+                    format: formats[inputType],
+                    editable: editable,
+                    decoration: new InputDecoration(
+                      hintText: "Tanggal Lahir",
+                      labelText: 'Tanggal Lahir',
+                      hasFloatingPlaceholder: false,
+                      border: new OutlineInputBorder(
+                        borderRadius: new BorderRadius.circular(20.0),
+                      ),
+                    ),
+                    onChanged: (dt) => setState(() => date = dt),
+                  ),
                   new Padding(padding: new EdgeInsets.only(top: 20.0),),
                   new Row(
                     children: <Widget>[
-                      new Text("Kategori",style: new TextStyle(fontSize: 18.0,color: Colors.blue),),
+                      new Text("Agama",style: new TextStyle(fontSize: 18.0,color: Colors.blue),),
                       new DropdownButton(
                         onChanged: (String value){
                           pilihAgama(value);
@@ -89,6 +111,17 @@ class _Pengaduan_PageState extends State<Pengaduan_Page>{
                         }).toList(),
                       )
                     ],
+                  ),
+                  new Padding(padding: new EdgeInsets.only(top: 20.0),),
+                  new TextField(
+                    maxLines: 3,
+                    decoration: new InputDecoration(
+                        hintText: "Keterangan",
+                        labelText: "Keterangan",
+                        border: new OutlineInputBorder(
+                            borderRadius: new BorderRadius.circular(20.0)
+                        )
+                    ),
                   ),
                   new Padding(padding: new EdgeInsets.only(top: 20.0),),
                   new TextField(

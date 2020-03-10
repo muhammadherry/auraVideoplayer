@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:warga2/beranda/beranda_view.dart';
-
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 import 'package:intl/intl.dart';
+import 'package:warga2/landingpage_view.dart';
 
 class Saran_Page extends StatefulWidget {
   @override
@@ -207,7 +206,7 @@ class _Saran_PageState extends State<Saran_Page> {
                           child: Center(
                             child: GestureDetector(
                               onTap: () {
-                                BerandaPage();
+                                LandingPage();
                                 Navigator.pop(context);
                               },
                               child: new Text("Masukkan"),

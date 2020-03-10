@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:warga2/landingpage_view.dart';
 
 class add_pengurus extends StatefulWidget {
   @override
@@ -13,7 +14,7 @@ class _add_pengurusState extends State<add_pengurus> {
       resizeToAvoidBottomPadding: false,
        appBar: new AppBar(
         title: new Text("Add Pengurus"),
-         backgroundColor: Colors.transparent,
+         backgroundColor: Colors.teal,
       ),
       body: Container(
           decoration: BoxDecoration(
@@ -100,9 +101,16 @@ class _add_pengurusState extends State<add_pengurus> {
                             ),
                             new Padding(padding: const EdgeInsets.all(10.0),),
                             new RaisedButton(
-                              child: new Text("Pesan",style: TextStyle(color: Colors.white),),
-                              color: Colors.grey,
-                              onPressed: (){},
+                              child: new Text(
+                                "Pesan",
+                                style: TextStyle
+                                  (color: Colors.white),),
+                              color: Colors.blue,
+                              onPressed: (){
+                                Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => LandingPage()),
+                              );},
                             )
                           ],
                         ),

@@ -1,18 +1,19 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:warga2/pengurus/add_pengurus.dart';
 
-class Pemutakhir extends StatefulWidget {
+class HomeAnggota_Pengurus extends StatefulWidget {
   @override
-  _PemutakhirState createState() => _PemutakhirState();
+  _Anggota_PengurusState createState() => _Anggota_PengurusState();
 }
 
-class _PemutakhirState extends State<Pemutakhir> {
+class _Anggota_PengurusState extends State<HomeAnggota_Pengurus> {
   final dio = new Dio(); // for http requests
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
-        title: new Text("Daftar Pemutakhir Data"),
+        title: new Text("Daftar Pengurus"),
         backgroundColor: Colors.teal,
       ),
       body: ListView(
@@ -83,7 +84,7 @@ class _PemutakhirState extends State<Pemutakhir> {
                                 topRight: Radius.circular(8)),
 
                           ),
-                          child: ClipRRect(
+                           child: ClipRRect(
                             borderRadius: new BorderRadius.circular(24.0),
                             child: Image(
                               fit: BoxFit.contain,
@@ -207,7 +208,12 @@ class _PemutakhirState extends State<Pemutakhir> {
           ),
         ],
       ),
-
+      floatingActionButton: new FloatingActionButton(
+          child: new Icon(Icons.add),
+          backgroundColor: Colors.teal,
+          onPressed: ()=> Navigator.of(context).push(
+              new MaterialPageRoute(builder: (BuildContext context)=> new add_pengurus())
+          )),
     );
   }
 

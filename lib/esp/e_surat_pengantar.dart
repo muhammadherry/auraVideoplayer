@@ -1,270 +1,171 @@
+import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:warga2/beranda/beranda_view.dart';
+import 'package:intl/intl.dart';
+import 'package:warga2/landingpage_view.dart';
 
-class E_Surat_Pengantar extends StatefulWidget {
+class E_Surat_Pengantar extends StatefulWidget{
   @override
   _E_Surat_PengantarState createState() => new _E_Surat_PengantarState();
 }
 
-class _E_Surat_PengantarState extends State<E_Surat_Pengantar> {
-  int radioValue = 0;
-  void handleradioValue(int value){
+class _E_Surat_PengantarState extends State<E_Surat_Pengantar>{
+  final formats = {
+    InputType.both: DateFormat("EEEE, MMMM d, yyyy 'at' h:mma"),
+    InputType.date: DateFormat('yyyy-MM-dd'),
+    InputType.time: DateFormat("HH:mm"),
+  };
+  InputType inputType = InputType.both;
+  bool editable = true;
+  DateTime date;
+
+  String _jk = "";
+  List<String> agama=["Islam","Kristen","Budha","Hindu","Konghuchu"];
+  String _agama="Islam";
+  void _pilihJk(String value){
     setState(() {
-      radioValue = value;
-      print(radioValue);
+      _jk=value;
+    });
+  }
+  void pilihAgama(String value){
+    setState((){
+      _agama=value;
     });
   }
   @override
-  Widget build(BuildContext context) {
-      return new Scaffold(
-
+  Widget build(BuildContext context){
+    return new Scaffold(
         appBar: new AppBar(
           title: new Text("Buat Surat Pengantar"),
-          backgroundColor: Colors.transparent,
+          backgroundColor: Colors.teal,
         ),
-        body: ListView(
-          shrinkWrap: true,
+        /*appBar: new AppBar(
+        leading: new Icon(Icons.keyboard_arrow_left),
+        title: new Text("Saran"),
+        backgroundColor: Colors.teal,
+      ),*/
+        body: new ListView(
           children: <Widget>[
-            Column(
-              children: <Widget>[
-                Container(
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage("assets/tanagochi.jpg"), fit: BoxFit.cover)
+            new Container(
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("assets/tanagochi.jpg"), fit: BoxFit.cover)
+              ),
+              padding: new EdgeInsets.all(10.0),
+              child: new Column(
+                children: <Widget>[
+                  new TextField(
+                    decoration: new InputDecoration(
+                        hintText: "Nama Lengkap",
+                        labelText: "Nama Lengkap",
+                        border: new OutlineInputBorder(
+                            borderRadius: new BorderRadius.circular(20.0)
+                        )
+                    ),
                   ),
-                  child: Stack(
-                    children: <Widget>[
-                      Column(
-                        children: <Widget>[
-                          new Image.asset('assets/logotol1.png',width: 200.0,),
-
-                          SizedBox(height: 50.0),
-                          Container(
-                            height: 50.0,
-                            width: 350,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(2)
-                            ),
-                            child: TextField(
-                              decoration: InputDecoration(
-                                  hintText:'Nama Lengkat',
-                                  icon: Padding(
-                                    padding: EdgeInsets.only(left: 10.0),
-                                    child: Icon(Icons.supervised_user_circle,
-                                      color: Colors.grey,
-                                    ),
-                                  ),
-                                  border: UnderlineInputBorder(
-                                      borderSide: BorderSide.none
-                                  )
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 5.0),
-                          Container(
-                            height: 50.0,
-                            width: 350,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(2)
-                            ),
-
-                            child: TextField(
-                              decoration: new InputDecoration(
-                                  hintText:'Tempat Tgl Lahir',
-                                  icon: Padding(
-                                    padding: EdgeInsets.only(left: 10.0),
-                                    child: Icon(Icons.date_range,
-                                      color: Colors.grey,
-                                    ),
-                                  ),
-                                  border: UnderlineInputBorder(
-                                      borderSide: BorderSide.none
-                                  )
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 5.0),
-                          Container(
-                            height: 50.0,
-                            width: 350,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(2)
-                            ),
-
-                            child: TextField(
-                              decoration: new InputDecoration(
-                                hintText: "Status",
-                                icon: Padding(
-                                  padding: EdgeInsets.only(left: 10.0),
-                                  child: Icon(Icons.fiber_smart_record,
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 5.0),
-                          Container(
-                            height: 50.0,
-                            width: 350,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(2)
-                            ),
-                            child: TextField(
-                              decoration: new InputDecoration(
-                                hintText: "Agama",
-                                icon: Padding(
-                                  padding: EdgeInsets.only(left: 10.0),
-                                  child: Icon(Icons.mobile_screen_share,
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Row(
-                              children: <Widget>[
-                                Radio(
-                                  groupValue: radioValue,
-                                  activeColor: Colors.blue,
-                                  onChanged: handleradioValue,
-                                  value: 0,
-                                ),
-                                Text('Laki-laki',
-                                  style: TextStyle(
-                                    color: Colors.grey[500],
-                                    fontSize: 15.0,
-                                    fontWeight: FontWeight.w300,
-                                  ),
-                                ),
-                                Radio(
-                                  groupValue: radioValue,
-                                  activeColor: Colors.blue,
-                                  onChanged: handleradioValue,
-                                  value: 1,
-                                ),
-                                Text('Perempuan',
-                                  style: TextStyle(
-                                    color: Colors.grey,
-                                    fontSize: 15.0,
-                                    fontWeight: FontWeight.w300,
-                                  ),
-                                ),
-                              ]
-                          ),
-                          SizedBox(height: 5.0),
-                          Container(
-                            height: 50.0,
-                            width: 350,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(2)
-                            ),
-                            child: TextField(
-                              decoration: new InputDecoration(
-                                hintText: "Pekerjaan",
-                                icon: Padding(
-                                  padding: EdgeInsets.only(left: 10.0),
-                                  child: Icon(Icons.work,
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 5.0),
-                          Container(
-                            height: 50.0,
-                            width: 350,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(2)
-                            ),
-                            child: TextField(
-                              decoration: new InputDecoration(
-                                hintText: "No-KTP",
-                                icon: Padding(
-                                  padding: EdgeInsets.only(left: 10.0),
-                                  child: Icon(Icons.credit_card,
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 5.0),
-                          Container(
-                            height: 50.0,
-                            width: 350,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(2)
-                            ),
-                            child: TextField(
-                              decoration: new InputDecoration(
-                                hintText: "Kartu Keluarga",
-                                icon: Padding(
-                                  padding: EdgeInsets.only(left: 10.0),
-                                  child: Icon(Icons.supervised_user_circle,
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 5.0),
-                          Container(
-                            height: 50.0,
-                            width: 350,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(2)
-                            ),
-                            child: TextField(
-                              decoration: new InputDecoration(
-                                hintText: "Alamat",
-                                icon: Padding(
-                                  padding: EdgeInsets.only(left: 10.0),
-                                  child: Icon(Icons.add_location,
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 20.0,),
-                          Container(
-                            height: 50.0,
-                            width: 350.0,
-                            decoration: BoxDecoration(
-                                color: Colors.grey,
-                                borderRadius: BorderRadius.circular(2)
-                            ),
-                            child: Center(
-                              child: GestureDetector(
-                                onTap: () {
-                                  BerandaPage();
-                                  Navigator.pop(context);
-                                },
-                                child: new Text("Masukkan"),
-                              ),
-                            ),
-                          )
-                        ],
+                  new Padding(padding: new EdgeInsets.only(top: 20.0),),
+                  new TextField(
+                    maxLines: 3,
+                    decoration: new InputDecoration(
+                        hintText: "Tempat Lahir",
+                        labelText: "Tampat Lahir",
+                        border: new OutlineInputBorder(
+                            borderRadius: new BorderRadius.circular(20.0)
+                        )
+                    ),
+                  ),
+                  new Padding(padding: new EdgeInsets.only(top: 20.0),),
+                  new DateTimePickerFormField(
+                    inputType: inputType,
+                    format: formats[inputType],
+                    editable: editable,
+                    decoration: new InputDecoration(
+                      hintText: "Tanggal Lahir",
+                      labelText: 'Tanggal Lahir',
+                      hasFloatingPlaceholder: false,
+                      border: new OutlineInputBorder(
+                        borderRadius: new BorderRadius.circular(20.0),
                       ),
-
+                    ),
+                    onChanged: (dt) => setState(() => date = dt),
+                  ),
+                  new Padding(padding: new EdgeInsets.only(top: 20.0),),
+                  new Row(
+                    children: <Widget>[
+                      new Text("Agama",style: new TextStyle(fontSize: 18.0,color: Colors.blue),),
+                      new DropdownButton(
+                        onChanged: (String value){
+                          pilihAgama(value);
+                        },
+                        value: _agama,
+                        items: agama.map((String value){
+                          return new DropdownMenuItem(
+                            value: value,
+                            child: new Text(value),
+                          );
+                        }).toList(),
+                      )
                     ],
                   ),
-                )
-              ],
+                  new Padding(padding: new EdgeInsets.only(top: 20.0),),
+                  new RadioListTile(
+                    value: "Menikah",
+                    title: new Text("Menikah"),
+                    groupValue: _jk,
+                    onChanged: (String value){
+                      _pilihJk(value);
+                    },
+                    activeColor: Colors.blue,
+                  ),
+                  new RadioListTile(
+                    value: "Belum Menikah",
+                    title: new Text("Belum Menikah"),
+                    groupValue: _jk,
+                    onChanged: (String value){
+                      _pilihJk(value);
+                    },
+                    activeColor: Colors.blue,
+                  ),
+                  new Padding(padding: new EdgeInsets.only(top: 20.0),),
+                  new TextField(
+                    decoration: new InputDecoration(
+                        hintText: "Pekerjaan",
+                        labelText: "Pekerjaan",
+                        border: new OutlineInputBorder(
+                            borderRadius: new BorderRadius.circular(20.0)
+                        )
+                    ),
+                  ),
+                  new Padding(padding: new EdgeInsets.only(top: 20.0),),
+                  new TextField(
+                    decoration: new InputDecoration(
+                        hintText: "No-KTP",
+                        labelText: "No-KTP",
+                        border: new OutlineInputBorder(
+                            borderRadius: new BorderRadius.circular(20.0)
+                        )
+                    ),
+                  ),
+                  new Padding(padding: new EdgeInsets.only(top: 20.0),),
+                  new TextField(
+                    decoration: new InputDecoration(
+                        hintText: "No-KK",
+                        labelText: "No Kartu Keluarga",
+                        border: new OutlineInputBorder(
+                            borderRadius: new BorderRadius.circular(20.0)
+                        )
+                    ),
+                  ),
+                  new RaisedButton(
+                    child: new Text("OK"),
+                    color: Colors.blue[200],
+                    onPressed:(){LandingPage();},
+                  )
+                ],
+              ),
             ),
           ],
-        ),
-      );
-
+        )
+    );
   }
 }

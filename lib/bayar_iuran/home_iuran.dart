@@ -14,7 +14,7 @@ class _Home_IuranState extends State<Home_Iuran> {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text('Home Iuran',style: TextStyle(color: Colors.white),),
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.teal,
       ),
       body: new Container(
         child: new ListView(

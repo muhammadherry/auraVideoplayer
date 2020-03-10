@@ -3,12 +3,13 @@ import 'package:warga2/Beranda_Inbox.dart';
 import 'package:warga2/absensi_security/destination_view.dart';
 import 'package:warga2/bayar_iuran/home_iuran.dart';
 import 'package:warga2/bayar_iuran/store_widget.dart';
+import 'package:warga2/beranda_pendaftaran/pendaftaran_page.dart';
 import 'package:warga2/beranda_pengaduan/home_pengaduan.dart';
 import 'package:warga2/constant.dart';
 import 'package:warga2/esp/e_surat_pengantar.dart';
 import 'package:warga2/pemutakhir_data/pemutakhir_page.dart';
-import 'package:warga2/pengurus/list_anggota_pengurus.dart';
-import 'package:warga2/saran/uploadimage.dart';
+import 'package:warga2/pengurus/Anggota_Home.dart';
+import 'package:warga2/saran/form.dart';
 
 class BerandaPage extends StatefulWidget {
   @override
@@ -70,7 +71,7 @@ class _BerandaPageState extends State<BerandaPage> {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) => Anggota_Pengurus(),
+                                            builder: (context) => HomeAnggota_Pengurus(),
                                           ),
                                         );
                                       },
@@ -108,7 +109,7 @@ class _BerandaPageState extends State<BerandaPage> {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) => Upload_Image(),
+                                            builder: (context) => form(),
                                           ),
                                         );
                                       },
@@ -231,7 +232,7 @@ class _BerandaPageState extends State<BerandaPage> {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) => Home_Beranda_Indbox(),
+                                            builder: (context) => Pendaftaran_Page(),
                                           ),
                                         );
                                       },

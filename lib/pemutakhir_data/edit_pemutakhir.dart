@@ -20,7 +20,7 @@ class _Edit_PemutakhirState extends State<Edit_Pemutakhir> {
 
       appBar: new AppBar(
         title: new Text("Add Pengurus"),
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.teal,
       ),
       body: ListView(
         shrinkWrap: true,

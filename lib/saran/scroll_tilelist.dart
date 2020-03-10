@@ -1,23 +1,24 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
-class Pemutakhir extends StatefulWidget {
+class Tile_Listing extends StatefulWidget {
   @override
-  _PemutakhirState createState() => _PemutakhirState();
+  _Tile_ListingState createState() => _Tile_ListingState();
 }
 
-class _PemutakhirState extends State<Pemutakhir> {
+class _Tile_ListingState extends State<Tile_Listing> {
   final dio = new Dio(); // for http requests
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: new AppBar(
-        title: new Text("Daftar Pemutakhir Data"),
-        backgroundColor: Colors.teal,
-      ),
+    return Scaffold(appBar: new AppBar(
+      title: new Text("Buat Daftar Warga"),
+      backgroundColor: Colors.transparent,
+    ),
       body: ListView(
         scrollDirection: Axis.vertical,
         children: <Widget>[
+
+
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Container(
@@ -26,7 +27,7 @@ class _PemutakhirState extends State<Pemutakhir> {
                     color: Colors.white,
                     elevation: 14.0,
                     borderRadius: BorderRadius.circular(24.0),
-                    shadowColor: Color(0xffbdbdbd),
+                    shadowColor: Color(0x802196F3),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
@@ -46,7 +47,7 @@ class _PemutakhirState extends State<Pemutakhir> {
                               fit: BoxFit.contain,
                               alignment: Alignment.topRight,
                               image: NetworkImage(
-                                  "https://i.pinimg.com/originals/77/f0/4e/77f04ee409421ca9e9143cb29968e9db.jpg"),
+                                  "https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"),
                             ),
                           ),),
                       ],)
@@ -62,7 +63,7 @@ class _PemutakhirState extends State<Pemutakhir> {
                     color: Colors.white,
                     elevation: 14.0,
                     borderRadius: BorderRadius.circular(24.0),
-                    shadowColor: Color(0xffbdbdbd),
+                    shadowColor: Color(0x802196F3),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
@@ -81,17 +82,19 @@ class _PemutakhirState extends State<Pemutakhir> {
                             borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(8),
                                 topRight: Radius.circular(8)),
-
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    'assets/images/kuroko.jpg'),fit: BoxFit.fill),
                           ),
-                          child: ClipRRect(
+                  /*        child: ClipRRect(
                             borderRadius: new BorderRadius.circular(24.0),
                             child: Image(
                               fit: BoxFit.contain,
                               alignment: Alignment.topRight,
                               image: NetworkImage(
-                                  "https://i.pinimg.com/originals/77/f0/4e/77f04ee409421ca9e9143cb29968e9db.jpg"),
+                                  "https://images.unsplash.com/photo-1545396872-a6682fc218ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"),
                             ),
-                          ),),
+                          ),*/),
                       ],)
                 ),
               ),
@@ -105,7 +108,7 @@ class _PemutakhirState extends State<Pemutakhir> {
                     color: Colors.white,
                     elevation: 14.0,
                     borderRadius: BorderRadius.circular(24.0),
-                    shadowColor: Color(0xffbdbdbd),
+                    shadowColor: Color(0x802196F3),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
@@ -125,7 +128,7 @@ class _PemutakhirState extends State<Pemutakhir> {
                               fit: BoxFit.contain,
                               alignment: Alignment.topRight,
                               image: NetworkImage(
-                                  "https://i.pinimg.com/originals/77/f0/4e/77f04ee409421ca9e9143cb29968e9db.jpg"),
+                                  "https://images.unsplash.com/photo-1575540325855-4b5d285a3845?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"),
                             ),
                           ),),
                       ],)
@@ -141,7 +144,7 @@ class _PemutakhirState extends State<Pemutakhir> {
                     color: Colors.white,
                     elevation: 14.0,
                     borderRadius: BorderRadius.circular(24.0),
-                    shadowColor: Color(0xffbdbdbd),
+                    shadowColor: Color(0x802196F3),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
@@ -161,7 +164,7 @@ class _PemutakhirState extends State<Pemutakhir> {
                               fit: BoxFit.contain,
                               alignment: Alignment.topRight,
                               image: NetworkImage(
-                                  "https://i.pinimg.com/originals/77/f0/4e/77f04ee409421ca9e9143cb29968e9db.jpg"),
+                                  "https://images.unsplash.com/photo-1526399232581-2ab5608b6336?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"),
                             ),
                           ),),
                       ],)
@@ -177,7 +180,7 @@ class _PemutakhirState extends State<Pemutakhir> {
                     color: Colors.white,
                     elevation: 14.0,
                     borderRadius: BorderRadius.circular(24.0),
-                    shadowColor: Color(0xffbdbdbd),
+                    shadowColor: Color(0x802196F3),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
@@ -197,7 +200,7 @@ class _PemutakhirState extends State<Pemutakhir> {
                               fit: BoxFit.contain,
                               alignment: Alignment.topRight,
                               image: NetworkImage(
-                                  "https://i.pinimg.com/originals/77/f0/4e/77f04ee409421ca9e9143cb29968e9db.jpg"),
+                                  "https://images.unsplash.com/photo-1526399232581-2ab5608b6336?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"),
                             ),
                           ),),
                       ],)
@@ -205,9 +208,10 @@ class _PemutakhirState extends State<Pemutakhir> {
               ),
             ),
           ),
+
+
         ],
       ),
-
     );
   }
 
