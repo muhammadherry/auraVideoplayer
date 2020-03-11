@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:warga2/Beranda_Inbox.dart';
+
 import 'package:warga2/constant.dart';
+
+import 'QRcode.dart';
 class Home_Security extends StatefulWidget {
   @override
   _Home_SecurityState createState() => new _Home_SecurityState();
@@ -181,7 +184,7 @@ class _Home_SecurityState extends State<Home_Security> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Home_Beranda_Indbox(),
+                              builder: (context) => Barcode_Absensi(),
                             ),
                           );
                         },
@@ -208,7 +211,7 @@ class _Home_SecurityState extends State<Home_Security> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Home_Beranda_Indbox(),
+                              builder: (context) => Barcode_Absensi(),
                             ),
                           );
                         },
